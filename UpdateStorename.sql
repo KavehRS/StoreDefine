@@ -1,56 +1,57 @@
 ﻿
-/*فرانچايز امیدیه شهروند شهریور*/
-/*OKS10419	    فرانچا%ز ام%د%ه شهروند دهملا*/
+/*فرانچایز بجنورد شیر آب*/
+/*OKS10837	     فرانچا%ز بجنورد شهرباز*/
 ------------------------------------------------------------------------------------------------------------akamlakds
            
 SELECT * FROM      [CentralWH1\NODE].okmali.dbo.akamlak  
--- SET akAmlakDS = N'فرانچايز امیدیه شهروند شهریور'  
-WHERE akAmlakDS LIKE  N'%فرانچا%ز ام%د%ه شهروند%' AND akAmlakSN = 9062
+-- SET akAmlakDS = N'فرانچایز بجنورد شیر آب'  
+WHERE akAmlakDS LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND akAmlakSN = 9330
 
 
 
 
 ----------------------------------------------------------------------------------------------------------------EstateName 
 
-
+-- koroshdb
 SELECT * FROM   	   Estate.dbo.Estate 
---SET EstateName = N'فرانچايز امیدیه شهروند شهریور'    
-WHERE EstateName LIKE  N'%فرانچا%ز ام%د%ه شهروند دهملا%'  AND EstateID = 7594.199
+--SET EstateName = N'فرانچایز بجنورد شیر آب'    
+WHERE EstateName LIKE  N'%فرانچا%ز بجنورد شهرباز%'  AND EstateID = 7812.199
+
 
 
 
 SELECT * FROM     [CentralWH1\NODE].OKMasterData.dbo.mdDep
---SET  mdDepDS = N'فرانچايز امیدیه شهروند شهریور'
-WHERE  mdDepDS  LIKE  N'%فرانچا%ز ام%د%ه شهروند %' AND mdDepSN = 13473
+--SET  mdDepDS = N'فرانچایز بجنورد شیر آب'
+WHERE  mdDepDS  LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND mdDepSN = 13966
 
 
 
 
 ---------------------------------------------------------------------------------------------------------------------Depname
 
-
+-- koroshdb
 SELECT * FROM       Personnel.dbo.Departeman 
---SET Depname= N'فرانچايز امیدیه شهروند شهریور'
-WHERE Depname   LIKE  N'%فرانچا%ز ام%د%ه شهروند%' AND DepId = 13473
+   --SET Depname= N'فرانچایز بجنورد شیر آب'
+WHERE Depname   LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND DepId = 13966
 
 --------------------------------------------------------------------------------------------------------------------Tadarokat
 
 SELECT * FROM     [Kouroshstoredb\NODE].Tadarokat.dbo.tTadarokat 
- --    SET Sharh = N'فرانچايز امیدیه شهروند شهریور'  
-WHERE  Sharh LIKE  N'%فرانچا%ز ام%د%ه شهروند%'  AND TadarokatSN = 8492.199
+  --   SET Sharh = N'فرانچایز بجنورد شیر آب'  
+WHERE  Sharh LIKE  N'%فرانچا%ز بجنورد شهرباز%'  AND TadarokatSN = 8745.199
 
 
 -----------------------------------------------------------------------------------------------------------------------------Section
 
 
 SELECT * FROM        Personnel.dbo.Section 
---SET SectionName = N'م16 فرانچايز امیدیه شهروند شهریور' , namekargah = N'فرانچايز امیدیه شهروند شهریور'  
-WHERE  SectionName LIKE  N'%فرانچا%ز ام%د%ه شهروند %' AND 	Sectionid = 7175
+--SET SectionName = N'م8 فرانچایز بجنورد شیر آب' , namekargah = N'فرانچایز بجنورد شیر آب'  
+WHERE  SectionName LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND 	Sectionid = 7419
  
 
 SELECT * FROM      [CentralWH1\NODE].OKMasterData.dbo.mdSection
--- SET mdSectionDS =  N'م16 فرانچايز امیدیه شهروند شهریور'
-WHERE mdSectionDS LIKE  N'%فرانچا%ز ام%د%ه شهروند %' AND mdSectionSN = 7175
+-- SET mdSectionDS =  N'م8 فرانچایز بجنورد شیر آب'
+WHERE mdSectionDS LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND mdSectionSN = 7461
 
 
 --===============================================================
@@ -87,16 +88,16 @@ WHERE mdSectionDS LIKE  N'%فرانچا%ز ام%د%ه شهروند %' AND mdSect
 --===============================================================
 
 SELECT * FROM          Anbar..aAnbar  -- 6542.199
---SET Dsc =  N'فرانچايز امیدیه شهروند شهریور'  , UnqStr = N'فرانچايزامیدیهشهروندشهریور'
-WHERE Dsc LIKE  N'%فرانچا%ز ام%د%ه شهروند %' AND AnbarSN = 8647.199
+--SET Dsc =  N'فرانچایز بجنورد شیر آب'  , UnqStr = N'فرانچایزصالحآبادسعدی'
+WHERE Dsc LIKE  N'%فرانچا%ز بجنورد شهرباز%' AND AnbarSN = 8647.199
 
 
 
 
 ------------------------------------------------------------------------------------------------------------------POS
 SELECT * FROM            pos..Store 
-  --SET sname = N'فرانچايز امیدیه شهروند شهریور'   
-WHERE    SName LIKE   N'%فرانچا%ز ام%د%ه شهروند %' AND  StoreId = 8877.199
+  --SET sname = N'فرانچایز بجنورد شیر آب'   
+WHERE    SName LIKE   N'%فرانچا%ز بجنورد شهرباز%' AND  StoreId = 9134.199
 
 
 

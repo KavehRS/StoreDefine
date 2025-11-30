@@ -1,23 +1,23 @@
 ﻿-- Centeralwh
-	
-SELECT scode, Sname  FROM  POS..Store   WHERE  sname like  N'%فروشگاه رفسنجان م%رزا% دو%'  -- برای پیدا کردن scode
-SELECT * FROM [CENTRALWH1\NODE].okmasterdata.dbo.mddep where mddepds LIKE   N'%فروشگاه رفسنجان م%رزا% دو%'     -- برای پیدا کردن scode
+-- برای mdcostcenteraxsn & StoreNumber
+SELECT  s.sname, s.Scode, ax.mdCostCenterAXRecId, m.mddepsn FROM  POS..Store s
+JOIN [CENTRALWH1\NODE].okmasterdata.dbo.mddep m ON s.storeid = m.mdstoresn 
+JOIN [CENTRALWH1\NODE].okmasterdata.dbo.mdCostCenterAX ax ON ax.mdCostCenterAXValue LIKE '%'+CAST(s.scode AS VARCHAR(20))+'%'
+WHERE s.SName like  N'%فروشگاه م%بد بهشت%' 
 
 
-
-
-SELECT * FROM  [CENTRALWH1\NODE].okmasterdata.dbo.mdCostCenterAX where mdCostCenterAXvalue LIKE '%OKR10758%'  -- برای mdcostcenteraxsn
 
 -- D365 Server -- OKDC32013
-SELECT RECID,* FROM OperationalDB.ax.OMOPERATINGUNITENTITY WHERE OPERATINGUNITNUMBER LIKE '%OKR10758%'   -- برای mdDepAXRecID
+SELECT RECID,* FROM OperationalDB.ax.OMOPERATINGUNITENTITY WHERE OPERATINGUNITNUMBER LIKE '%OKR10938%'   -- برای mdDepAXRecID
 
 
 -- Centeralwh
 
  UPDATE  [CENTRALWH1\NODE].okmasterdata.dbo.mddep 
-   SET mdcostcenteraxsn = 5645801847 ,
-       mdDepAXRecID     = 5637590804
- where mddepsn = 13757
+   SET mdcostcenteraxsn = 5645932326 ,
+       mdDepAXRecID     = 5637595374
+ where mddepsn = 14064
+
 
 
 
@@ -29,7 +29,3 @@ ORDER BY mdCostCenterAXValue DESC
 
 
 
-
-
-OKS10412 
-SELECT * FROM  [CENTRALWH1\NODE].okmasterdata.dbo.mddep 

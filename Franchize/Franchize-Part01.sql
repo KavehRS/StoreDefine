@@ -46,16 +46,16 @@ FROM dbo.fcFranchiseStore FS
     INNER JOIN dbo.fcFranchiseContractPerson FCP ----اشخاص قرارداد
         ON FCP.FranchiseContractSN = FC.FranchiseContractSN
 WHERE      
-FS.FranchiseStoreSN =   82432.474    AND     -- وارد کردن FranchiseStoreSN
+FS.FranchiseStoreSN =   84184.474      AND     -- وارد کردن FranchiseStoreSN
 FS.StoreID IS NULL AND ---فروشگاه تعریف نشده 
 FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی 
 --AND FC.FranchiseContractStatus = 80
 
 
--- SELECT * FROM  dbo.fcFranchiseStore WHERE  FranchiseStoreSN =      82432.474    -- StoreID: 7663.199
--- SELECT * FROM  dbo.fcFranchiseContract  WHERE   FranchiseContractSN = 116873.474   
--- SELECT * FROM dbo.fcFranchiseStoreVasighe WHERE FranchiseContractSN  = 116873.474
--- SELECT * FROM  dbo.fcFranchiseContractPerson WHERE FranchiseContractSN  = 116873.474
+-- SELECT * FROM  dbo.fcFranchiseStore WHERE  FranchiseStoreSN =  84184.474     -- StoreID: 7663.199
+-- SELECT * FROM  dbo.fcFranchiseContract  WHERE   FranchiseContractSN = 117176.474   
+-- SELECT * FROM dbo.fcFranchiseStoreVasighe WHERE FranchiseContractSN  = 117176.474
+-- SELECT * FROM  dbo.fcFranchiseContractPerson WHERE FranchiseContractSN  = 117176.474
 
 
 --	 EXEC sp_helptext fcVWFranchiseContract_DropDown_Ref 
@@ -65,25 +65,26 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 --***************************************************************************************************  
 
-        EXEC dbo.fcFranchiseStoreCheckingNotNullData @FranchiseStoreSN =     82432.474  ;  
+        EXEC dbo.fcFranchiseStoreCheckingNotNullData @FranchiseStoreSN =     84184.474   ;  
 	   
+
 
 
 	   
 --1- exec sp_helptext fcFranchiseStoreCheckingNotNullData
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     82432.474                                                          
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     84184.474                                                           
 --****************************************************************************************************
 
-		EXEC dbo.fcFranchiseContractCheckingNotNullDataPrint @FranchiseContractSN =  116873.474;
+		EXEC dbo.fcFranchiseContractCheckingNotNullDataPrint @FranchiseContractSN =  117176.474;
 
 		
 
 
 --2-sp_helptext fcFranchiseContractCheckingNotNullDataPrint      
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     82432.474            
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     84184.474             
 --****************************************************************************************************
 
-    	EXEC fcSPFranchiseStore_InsertEstate_toPAP       82432.474  ;
+    	EXEC fcSPFranchiseStore_InsertEstate_toPAP       84184.474   ;
            
 	
 	--SELECT * FROM    Estate..Estate -- 6959.199
@@ -99,26 +100,26 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 
 --3-sp_helptext fcSPFranchiseStore_InsertEstate_toPAP
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=        82432.474                                                                   
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=        84184.474                                                                    
 --**************************************************************************************************** 
 
-        EXEC dbo.akspAmlak_FranchiseToAmlak  @FranchiseStoreSN =     82432.474     ,  @mdRegionsubSN =  70,--(SELECT  * FROM OKMasterData..mdRegionSub where mdRegionSN = 8.199 ), 
+        EXEC dbo.akspAmlak_FranchiseToAmlak  @FranchiseStoreSN =     84184.474      ,  @mdRegionsubSN = 46,--(SELECT  * FROM OKMasterData..mdRegionSub where mdRegionSN = 8.199 ), 
 	                                                                               	  @mdSectionsn = NULL
 
 
 --@mdRegionsubSN قرار میدهیم کد ریجن را در کوییری داخل پرانتز وارد کرده و سپس دیستریکت را پیدا کرده و جلوی 
 
 
-	--  SELECT  * FROM         OKMali..akamlak 
-	----	SET mdRegionSubSN = 32
- --       WHERE  akAmlakMovaledSN =     82432.474   
+	 -- SELECT  * FROM         OKMali..akamlak 
+		--SET mdRegionSubSN = 32
+  --      WHERE  akAmlakMovaledSN =     84184.474    
 
                                                  
 --4-sp_helptext [akspAmlak_FranchiseToAmlak]
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     82432.474                                                                   
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     84184.474                                                                    
 --****************************************************************************************************	                 
  
-        EXEC dbo.fcSPFranchiseStore_InsertContract_toPAP @FranchiseContractSN = 116873.474; 
+        EXEC dbo.fcSPFranchiseStore_InsertContract_toPAP @FranchiseContractSN = 117176.474; 
 		
 
 		--SELECT * FROM         Estate..Contract
@@ -129,30 +130,29 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 --SELECT * FROM      dbo.fcFranchiseContract --- 7390.199
 -- --SET ContractID = NULL
---WHERE FranchiseStoreSN =     82432.474   
+--WHERE FranchiseStoreSN =     84184.474    
 
 	--FranchiseStoreSN
 
 --5-sp_helptext fcSPFranchiseStore_InsertContract_toPAP      
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN  =     82432.474                                           
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN  =     84184.474                                            
 --****************************************************************************************************  
      
-        EXEC dbo.fcSPFranchiseStore_InsertContractPerson_toPAP @FranchiseContractSN = 116873.474
+        EXEC dbo.fcSPFranchiseStore_InsertContractPerson_toPAP @FranchiseContractSN = 117176.474
 
 
 		--SELECT  * FROM      Estate..[Owner]
-		--WHERE OwnerID in (9887.199)
+		--WHERE OwnerID in (10318.199)
 
 
 
 	
 		
 --6-sp_helptext fcSPFranchiseStore_InsertContractPerson_toPAP      
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     82432.474                                                                  
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     84184.474                                                                   
 --****************************************************************************************************  
   
-        EXEC dbo.fcSPFranchiseStore_InsertContractBand_toPAP @FranchiseContractSN =116873.474;
-
+        EXEC dbo.fcSPFranchiseStore_InsertContractBand_toPAP @FranchiseContractSN =117176.474;
 
 
 		
@@ -164,11 +164,11 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
   
 --7- EXEC sp_helptext fcSPFranchiseStore_InsertContractBand_toPAP      
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =      82432.474                                                                   
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =      84184.474                                                                    
 --**************************************************************************************************** 
     
-        EXEC dbo.fcSPFranchiseStore_InsertStore_toPAP @FranchiseStoreSN    =   82432.474  ,
-													  @FranchiseContractSN =  116873.474 ;
+        EXEC dbo.fcSPFranchiseStore_InsertStore_toPAP @FranchiseStoreSN    =   84184.474   ,
+													  @FranchiseContractSN =  117176.474 ;
 							
 	-- SELECT * FROM store where StoreId = 9021.199
 
@@ -180,13 +180,12 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 
 ----8- EXEC sp_helptext fcSPFranchiseStore_InsertStore_toPAP
---LOG-- SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     82432.474                                                                
+--LOG-- SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN=     84184.474                                                                 
 --****************************************************************************************************   
 
-		EXEC fcSPFranchiseStore_InsertSectionId_toPAP @FranchiseStoreSN =     82432.474        ,	@FranchiseContractSN =116873.474, @mdRegionsubSN = 70
+		EXEC fcSPFranchiseStore_InsertSectionId_toPAP @FranchiseStoreSN =     84184.474         ,	@FranchiseContractSN =117176.474, @mdRegionsubSN = 46
 
-
-
+	
 
 
 	--DELETE [CentralWH1\NODE].OKMasterData.dbo.mdSection
@@ -199,7 +198,7 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 	  --SELECT * FROM  dbo.fcFranchiseStore
 	  -- -- SET Cityid = 143.490
-	  --WHERE FranchiseStoreSN =     82432.474   
+	  --WHERE FranchiseStoreSN =     84184.474    
 	 ----Select * from OKMASTERDATA.dbo.mdCityPos where mdProvincePosSN =1.301 AND mdCityPosDS LIKE N'%پ%شوا%'
 
 
@@ -209,36 +208,23 @@ FC.FranchiseContractTypeSN = 1 --نوعش تسهیلاته یا نمایندگی
 
 
 --9- EXEC sp_helptext fcSPFranchiseStore_InsertSectionId_toPAP
---LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =      82432.474                                                                     
+--LOG--SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =      84184.474                                                                      
 --****************************************************************************************************
 
-
-SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =   82432.474   
-
-SELECT RegionId,* FROM KOUROSHSTOREDB.POS.dbo.Store WHERE SCode =
-10786
-WHERE StoreId ='9058.199' 
-
-SELECT * FROM OKMasterData..mddistrict
-WHERE mdDistrictDS LIKE N'%رجند%'  -- بخشی از نام دیستریکت را وارد میکنیم
-
-SELECT * FROM      OKMali..akAmlak  
-WHERE akAmlakDS  LIKE N'%فرانچا%ز %اشان دروازه دولت%'
-  -- بان فرانچایز با جایگزین کردن % به جای «ی» و «ک»
-
-  
+SELECT * FROM fcFranchiseTransactionLog WHERE FranchiseStoreSN =   84184.474    
 
 
---SELECT * FROM KOUROSHSTOREDB.POS.dbo.Store WHERE SCode = 10230
+SELECT RegionId,* FROM KOUROSHSTOREDB.POS.dbo.Store 
+WHERE StoreId ='9216.199' 
 
-
-
-
---SELECT RegionId,* FROM KOUROSHSTOREDB.POS.dbo.Store 
---WHERE SCode LIKE '%513'
-
-
-
---SELECT * FROM OKMasterData..mdstore
---WHERE InventLocationID = 'OKS00001'
+SELECT
+am.akAmlakDS,NULL,NULL,d.mdDistrictDS,c.mdCityPosDS,p.mdProvincePosDS,am.akAmlakAddress,am.akAmlakPostalCode
+ FROM      OKMali..akAmlak am
+ FULL OUTER JOIN OKMasterData..mddistrict d
+ ON am.mdRegionsubSN = d.mdRegionsubSN
+  FULL OUTER JOIN OKMasterData..mdcityPOS c
+  ON am.mdCitySN = c.mdCityPOsSN
+  FULL OUTER JOIN OKMasterData..mdProvincePos p
+  ON c.mdProvincePosSN = p.mdProvincePosSN
+WHERE  am.akAmlakMovaledSN =     84184.474 ;
 

@@ -20,11 +20,14 @@ JOIN
     [CENTRALWH1\NODE].okmasterdata.dbo.mdCity c
     ON a.mdCitySN = c.mdCitySN
 WHERE 
-    a.akAmlakNO = 4254259694    ;
+    a.akAmlakNO = 4254259743    ;
 
 
 
-SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  LIKE N'%اهواز%' AND mdProvincePosSN = N'14.301'
+
+
+
+SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  LIKE N'%شاه%ن شهر%' AND mdProvincePosSN = N'19.301'
 
 --SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCity   WHERE mdcityno = 10300
 
@@ -38,9 +41,21 @@ SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  L
 -- اجرای SP با مقداردهی فقط ورودی‌های اجباری
 USE POS
 EXEC dbo.StoreDefinePart1
-    @akamlakno = 4254259694            ,    -- شماره ملک مورد نظر
-    @City = 1401.301;            -- شناسه شهر
+    @akamlakno = 4254259743            ,    -- شماره ملک مورد نظر
+    @City = 1909.301;            -- شناسه شهر
 
+
+
+
+
+
+	SELECT * FROM ostandata --districs
+	SELECT * FROM area --reg
+
+	SELECT * FROM pos..Store
+
+
+	Select * From mdVWCity_DataDropDown 
 
 
 
