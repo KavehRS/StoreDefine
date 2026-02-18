@@ -20,14 +20,14 @@ JOIN
     [CENTRALWH1\NODE].okmasterdata.dbo.mdCity c
     ON a.mdCitySN = c.mdCitySN
 WHERE 
-    a.akAmlakNO = 4254259743    ;
+    a.akAmlakNO =    5637642897       ;
 
 
 
 
 
 
-SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  LIKE N'%شاه%ن شهر%' AND mdProvincePosSN = N'19.301'
+SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  LIKE N'%اس%و%' AND mdProvincePosSN = N'3.301'
 
 --SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCity   WHERE mdcityno = 10300
 
@@ -41,18 +41,20 @@ SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  L
 -- اجرای SP با مقداردهی فقط ورودی‌های اجباری
 USE POS
 EXEC dbo.StoreDefinePart1
-    @akamlakno = 4254259743            ,    -- شماره ملک مورد نظر
-    @City = 1909.301;            -- شناسه شهر
+    @akamlakno = 5637642897               ,    -- شماره ملک مورد نظر
+    @City = 301.301 ;            -- شناسه شهر
 
 
 
-
+	SELECT * FROM dbo.StoreDefinePart1
 
 
 	SELECT * FROM ostandata --districs
 	SELECT * FROM area --reg
 
-	SELECT * FROM pos..Store
+	SELECT * FROM  pos..Store 
+--	SET SName = N'فروشگاه تبريز ارتش جنوبي-حذف'
+	WHERE SCode = 11018
 
 
 	Select * From mdVWCity_DataDropDown 
@@ -99,9 +101,9 @@ WHERE Dsc LIKE  N'%ناران%'
 
 
 
+EXEC sp_helptext StoreDefinePart1
 
-
-
+EXEC sp_helptext mdSPDep_Adi_Insert_V2 
 
 
 
@@ -138,6 +140,7 @@ FULL OUTER JOIN OKMasterData..mddistrict d
 	;
 
 	SELECT * FROM OKMasterData..mdRegionSub
+	SELECT * FROM OKMasterData..mddistrict
 	-- log SELECT * FROM dbo.mdRegionSub_TRGLOG
 
 ----SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdCitypos WHERE mdCityposDS  LIKE N'%بندرعباس%'   SELECT * FROM  [CentralWH1\NODE].okmasterdata.dbo.mdProvince WHERE  mdProvinceDS LIKE N'%خراس%'                                                 
@@ -164,23 +167,10 @@ FULL OUTER JOIN OKMasterData..mddistrict d
 
 
 
+ select * from okmasterdata.dbo.mdVWCity_DataDropDown 
 
 
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
+	select  aarea , adistrict ,code, placename,* from prd_OKBPMS
 
 
 	///////////////////////////////////////////////////////////////
@@ -197,5 +187,11 @@ ORDER BY mdCostCenterAXValue DESC
 
 --- prd_OKBPMS -- okdc30038\node
 
-	SELECT * FROM LC_PropertyDetails
-	SELECT * FROM mdVWCity_DataDropDown
+SELECT * FROM LC_PropertyDetails
+SELECT * FROM mdVWCity_DataDropDown
+SELECT * FROM vw_LC_PropertyDetails
+SELECT * FROM LC_LegalContract
+SELECT * FROM LC_PropertyDetails
+
+
+EXEC sp_helptext CENTRALWH.OKMasterData.dbo.mdSPDep_Adi_Insert_V2

@@ -7,41 +7,29 @@ WHERE res1f IS NULL
 
 
 
-SELECT TadarokatSN,Sharh,S.SCode,res1f, res3f,res5f,* FROM  Tadarokat.dbo.tTadarokat T 
+
+
+
+SELECT SName,RegionId,NULL,StoreNumber,* FROM POS.dbo.Store 
+WHERE StoreId ='9519.199' 
+
+
+
+
+
+
+
+
+
+SELECT Sharh,s.regionId,NULL,s.StoreNumber, S.SCode, TadarokatSN,res1f, res3f,res5f,s.scode,* FROM  Tadarokat.dbo.tTadarokat T 
 INNER JOIN POS..Store S
 ON T.Identifier = S.Identifier
-WHERE SCode IN (
-10906
-,10907
-,10908
-,10909
-,10910
-,10911
-,10912
-,10913
-,10914
-,10915
-,10916
-,10917
-,10918
-,10919
-,10920
-,10921
-,10922
-,10923
-,10924
-,10925
-,10926
-,10927
-,10928
-,10929
-,10930
-,10931
-,10932
-,10933
+WHERE SCode = 11219
 
-)
-ORDER BY 3 
+
+
+
+
 
 
 
@@ -50,92 +38,170 @@ SELECT TadarokatSN,Sharh,S.SCode,res1f, res3f,res5f,* FROM  Tadarokat.dbo.tTadar
 INNER JOIN POS..Store S
 ON T.Identifier = S.Identifier
 WHERE SCode IN (
-10906
-,10907
-,10908
-,10909
-,10910
-,10911
-,10912
-,10913
-,10914
-,10915
-,10917
-,10918
-,10919
-,10920
-,10921
-,10922
-,10923
-,10924
-,10925
-,10926
-,10927
-,10928
-,10929
-,10930
-,10931
-,10932
-,10933
-,10934
+11279
+,11280
+,11281
+,11282
+,11283
+,11284
+,11285
+,11286
+,11287
+,11288
+,11289
+,11290
+,11291
+,11292
+,11293
+,11294
+,11295
+,11296
+,11297
+,11298
+,11300
+,11301
+,11302
+,11303
+,11304
+,11305
+,11306
+,11307
+,11308
+,11309
+,11310
+,11311
+,11312
+
 )
 ORDER BY 3 
 
+update tTadarokat set  res1f='10.195.71.130',res3f='OKS11279SRV',res5f='10.195.71.134'
+where TadarokatSN =9160.199
+update tTadarokat set  res1f='10.195.72.200',res3f='OKS11280SRV',res5f='10.195.72.204'
+where TadarokatSN =9161.199
+update tTadarokat set  res1f='10.195.72.70',res3f='OKS11281SRV',res5f='10.195.72.74'
+where TadarokatSN =9162.199
+update tTadarokat set  res1f='10.195.73.10',res3f='OKS11282SRV',res5f='10.195.73.14'
+where TadarokatSN =9168.199
+update tTadarokat set  res1f='10.195.74.200',res3f='OKS11283SRV',res5f='10.195.74.204'
+where TadarokatSN =9171.199
+update tTadarokat set  res1f='10.195.75.10',res3f='OKS11284SRV',res5f='10.195.75.14'
+where TadarokatSN =9172.199
+update tTadarokat set  res1f='10.195.76.70',res3f='OKS11285SRV',res5f='10.195.76.74'
+where TadarokatSN =9163.199
+update tTadarokat set  res1f='10.195.77.10',res3f='OKS11286SRV',res5f='10.195.77.14'
+where TadarokatSN =9173.199
+update tTadarokat set  res1f='10.195.77.200',res3f='OKS11287SRV',res5f='10.195.77.204'
+where TadarokatSN =9164.199
+update tTadarokat set  res1f='10.195.79.130',res3f='OKS11288SRV',res5f='10.195.79.134'
+where TadarokatSN =9165.199
+update tTadarokat set  res1f='10.195.79.70',res3f='OKS11289SRV',res5f='10.195.79.74'
+where TadarokatSN =9166.199
+update tTadarokat set  res1f='10.195.80.70',res3f='OKS11290SRV',res5f='10.195.80.74'
+where TadarokatSN =9167.199
+update tTadarokat set  res1f='10.195.81.10',res3f='OKS11291SRV',res5f='10.195.81.14'
+where TadarokatSN =9175.199
+update tTadarokat set  res1f='10.195.81.200',res3f='OKS11292SRV',res5f='10.195.81.204'
+where TadarokatSN =9178.199
+update tTadarokat set  res1f='10.195.82.10',res3f='OKS11293SRV',res5f='10.195.82.14'
+where TadarokatSN =9179.199
+update tTadarokat set  res1f='10.195.83.10',res3f='OKS11294SRV',res5f='10.195.83.14'
+where TadarokatSN =9180.199
+update tTadarokat set  res1f='10.195.83.130',res3f='OKS11295SRV',res5f='10.195.83.134'
+where TadarokatSN =9181.199
+update tTadarokat set  res1f='10.195.84.70',res3f='OKS11296SRV',res5f='10.195.84.74'
+where TadarokatSN =9182.199
+update tTadarokat set  res1f='10.195.87.130',res3f='OKS11297SRV',res5f='10.195.87.134'
+where TadarokatSN =9183.199
+update tTadarokat set  res1f='10.195.9.130',res3f='OKS11298SRV',res5f='10.195.9.134'
+where TadarokatSN =9184.199
+update tTadarokat set  res1f='10.195.9.70',res3f='OKS11300SRV',res5f='10.195.9.74'
+where TadarokatSN =9169.199
+update tTadarokat set  res1f='10.196.172.10',res3f='OKS11301SRV',res5f='10.196.172.14'
+where TadarokatSN =9170.199
+update tTadarokat set  res1f='10.196.172.130',res3f='OKS11302SRV',res5f='10.196.172.134'
+where TadarokatSN =9185.199
+update tTadarokat set  res1f='10.196.187.130',res3f='OKS11303SRV',res5f='10.196.187.134'
+where TadarokatSN =9186.199
+update tTadarokat set  res1f='10.196.187.200',res3f='OKS11304SRV',res5f='10.196.187.204'
+where TadarokatSN =9187.199
 
 
-update tTadarokat set  res1f='10.196.1.70',res3f='OKS10906SRV',res5f='10.196.1.74'
-where TadarokatSN =8788.199
-update tTadarokat set  res1f='10.196.1.130',res3f='OKS10907SRV',res5f='10.196.1.134'
-where TadarokatSN =8774.199
-update tTadarokat set  res1f='10.196.1.200',res3f='OKS10908SRV',res5f='10.196.1.204'
-where TadarokatSN =8789.199
-update tTadarokat set  res1f='10.196.7.10',res3f='OKS10909SRV',res5f='10.196.7.14'
-where TadarokatSN =8797.199
-update tTadarokat set  res1f='10.196.7.70',res3f='OKS10910SRV',res5f='10.196.7.74'
-where TadarokatSN =8795.199
-update tTadarokat set  res1f='10.196.7.130',res3f='OKS10911SRV',res5f='10.196.7.134'
-where TadarokatSN =8790.199
-update tTadarokat set  res1f='10.196.7.200',res3f='OKS10912SRV',res5f='10.196.7.204'
-where TadarokatSN =8798.199
-update tTadarokat set  res1f='10.196.58.10',res3f='OKS10913SRV',res5f='10.196.58.14'
-where TadarokatSN =8791.199
-update tTadarokat set  res1f='10.196.58.70',res3f='OKS10914SRV',res5f='10.196.58.74'
-where TadarokatSN =8792.199
-update tTadarokat set  res1f='10.196.58.130',res3f='OKS10915SRV',res5f='10.196.58.134'
-where TadarokatSN =8799.199
-update tTadarokat set  res1f='10.196.58.200',res3f='OKS10917SRV',res5f='10.196.58.204'
-where TadarokatSN =8793.199
-update tTadarokat set  res1f='10.196.59.10',res3f='OKS10918SRV',res5f='10.196.59.14'
-where TadarokatSN =8801.199
-update tTadarokat set  res1f='10.196.59.70',res3f='OKS10919SRV',res5f='10.196.59.74'
-where TadarokatSN =8794.199
-update tTadarokat set  res1f='10.196.59.130',res3f='OKS10920SRV',res5f='10.196.59.134'
-where TadarokatSN =8796.199
-update tTadarokat set  res1f='10.198.165.130',res3f='OKS10921SRV',res5f='10.198.165.134'
-where TadarokatSN =8803.199
-update tTadarokat set  res1f='10.198.165.200',res3f='OKS10922SRV',res5f='10.198.165.204'
-where TadarokatSN =8808.199
-update tTadarokat set  res1f='10.199.162.200',res3f='OKS10923SRV',res5f='10.199.162.204'
-where TadarokatSN =8809.199
-update tTadarokat set  res1f='10.199.163.10',res3f='OKS10924SRV',res5f='10.199.163.14'
-where TadarokatSN =8810.199
-update tTadarokat set  res1f='10.199.163.70',res3f='OKS10925SRV',res5f='10.199.163.74'
-where TadarokatSN =8802.199
-update tTadarokat set  res1f='10.199.253.70',res3f='OKS10926SRV',res5f='10.199.253.74'
-where TadarokatSN =8811.199
-update tTadarokat set  res1f='10.199.218.200',res3f='OKS10927SRV',res5f='10.199.218.204'
-where TadarokatSN =8812.199
-update tTadarokat set  res1f='10.199.219.10',res3f='OKS10928SRV',res5f='10.199.219.14'
-where TadarokatSN =8813.199
-update tTadarokat set  res1f='10.199.184.10',res3f='OKS10929SRV',res5f='10.199.184.14'
-where TadarokatSN =8814.199
-update tTadarokat set  res1f='10.199.181.200',res3f='OKS10930SRV',res5f='10.199.181.204'
-where TadarokatSN =8804.199
-update tTadarokat set  res1f='10.199.182.70',res3f='OKS10931SRV',res5f='10.199.182.74'
-where TadarokatSN =8805.199
-update tTadarokat set  res1f='10.199.156.200',res3f='OKS10932SRV',res5f='10.199.156.204'
-where TadarokatSN =8806.199
-update tTadarokat set  res1f='10.199.157.200',res3f='OKS10933SRV',res5f='10.199.157.204'
-where TadarokatSN =8807.199
-update tTadarokat set  res1f='10.199.119.70',res3f='OKS10934SRV',res5f='10.199.119.74'
-where TadarokatSN =8815.199
+
+update tTadarokat set  res1f='10.196.188.200',res3f='OKS11308SRV',res5f='10.196.188.204'
+where TadarokatSN =9176.199
+update tTadarokat set  res1f='10.196.188.70',res3f='OKS11309SRV',res5f='10.196.188.74'
+where TadarokatSN =9177.199
+update tTadarokat set  res1f='10.196.189.10',res3f='OKS11310SRV',res5f='10.196.189.14'
+where TadarokatSN =9174.199
+
+
+
+
+
+SELECT 
+    DATA_TYPE 
+FROM 
+    INFORMATION_SCHEMA.COLUMNS 
+WHERE 
+    COLUMN_NAME = 'res1f';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
-﻿ SET XACT_ABORT ON
+﻿
+SET XACT_ABORT ON
 
 
 
---- SELECT * FROM OKPlan..fcFranchiseTransactionLog WHERE FranchiseStoreSN =      84157.474
+--- SELECT * FROM OKPlan..fcFranchiseTransactionLog WHERE FranchiseStoreSN =  85670.474 AND ErrorDS IS NULL
 
 
 
@@ -11,26 +12,30 @@
  
 --**********************************************Centralwh******OKMasterData
 
-SELECT * FROM OKMasterData..mdRegionSub where mdRegionSN = 1.199 AND mdRegionSubDS LIKE '%تربت%'
-SELECT * FROM OKMasterData..mddistrict WHERE mdDistrictDS LIKE '%تربت%'
-
+SELECT * FROM OKMasterData..mdRegionSub where mdRegionSN = 16.199  AND mdRegionSubDS LIKE '%ج%رفت%'
+SELECT * FROM OKMasterData..mddistrict WHERE mdDistrictDS LIKE '%ج%رفت%'
 
 
 --*********************************************Kouroshstoredb*****POS 
  SELECT * FROM KOUROSHSTOREDB.POS.dbo.Store-- 
-WHERE StoreId ='9208.199'
+WHERE StoreId ='9579.199'
 
 --**********************************************Centralwh******okmasterdata
 
 SELECT * FROM  okmasterdata.dbo.mdCostCenterAX
-WHERE mdCostCenterAXValue  LIKE '%OKR10690%'
+WHERE mdCostCenterAXValue  LIKE '%OKR11309%'
+
+----gig-dc1-p451  ax
+--SELECT KEY_, value FROM DimAttributeOMCostCenter WHERE value like N'OKR11219'
+
+
 
 
 --**********************************************OKDC32013\NODE******OperationalDB
 
 SELECT RECID,* FROM OperationalDB.ax.OMOPERATINGUNITENTITY
 --WHERE NAME LIKE '%%'
-WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
+WHERE OPERATINGUNITNUMBER LIKE N'%OKR11309%'
 
 
 
@@ -43,13 +48,13 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
 ************************************************/
 
 	USE OKPlan
-        EXEC dbo.fcSPFranchiseStore_InsertDepartment_toPAP  @FranchiseStoreSN =    84157.474,  
-                                                            @FranchiseContractSN = 117162.474,
-														    @mdRegionsubSN = 4,
-														    @Sectionid = 7480.000,
-															@mdcostcenteraxsn= 5645927076 ,
-														    @mdDistrictSN = 5,
-														    @AXRECID = 5637594444
+        EXEC dbo.fcSPFranchiseStore_InsertDepartment_toPAP  @FranchiseStoreSN =   85670.474,  
+                                                            @FranchiseContractSN = 117850.474,
+														    @mdRegionsubSN = 78,
+														    @Sectionid = 7823.000,
+															@mdcostcenteraxsn= 5646234579 ,
+														    @mdDistrictSN = 69,
+														    @AXRECID = 5637608632
 															
 --SELECT * FROM dbo.mdSection WHERE mdSectionSN = 6996
 
@@ -57,33 +62,59 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
 -- 12704.000 KOOROSHDB	Personnel	Departeman	12704.000
 --SELECT * FROM mdvwDep WHERE mdDepNO = 13226
 
-----5637583859
---SELECT * FROM  OKMasterData.dbo.mdDep 
--- -- SET mdcostcenteraxsn= 5645744079 mdDepAXRecID= 5637587999 mdDistrictSN = 682 -- mdDepAXRecID = 5637583859 , mdSectionSN = 7186.000  --mdcostcenteraxsn= 5637587999 ,  mdRegionsubSN = 37, mdDistrictSN = 682,
---WHERE mdDepDS LIKE N'%خل%ل آباد رجا%'  
+------5637583859
+
+--SELECT * FROM pos .. store WHERE scode = 10993
+
+--UPDATE
+--SELECT * FROM 
+--OKMasterData.dbo.mdDep
+-- --  SET mdRegionSN = 11.199
+--WHERE mdDepDS LIKE  N'%بومهن%حق%' 
 
 
+
+
+SELECT * FROM pos .. store WHERE SName like N'%فرانچا%ز صدرا خ%ابان مولانا%' 
+
+
+--SELECT * FROM pos .. store
+
+--SELECT * FROM [OKMasterData].[dbo].[VW_mdDep] WHERE  mdInvLocAXValue =N'OKS10847'
+--sp_helptext VW_mdDep
+--SELECT * FROM OKMasterData.dbo.mdDep
+
+--WHERE mdDepDS LIKE  N'%مر%وان%گلشن%' 
+
+--SELECT * FROM  pos .. store WHERE scode = 10846
+----
+--UPDATE pos .. store 
+--SET RegionId =
+--6.199
+--WHERE scode = 10882
 
 ----10- EXEC sp_helptext cfcSPFranchiseStore_InsertDepartment_toPAP
 
--- SELECT * FROM Departeman WHERE Depname LIKE  N'%فرانچا%ز نوشهر %وش% سرا دو%'  
+-- SELECT * FROM Departeman WHERE Depname LIKE  N'%جو%بار%امام%خم%ن%'   
 -- SELECT * FROM  OKMasterData.dbo.mdDep WHERE mdCostCenterAxSn = 5645501838
 
 
 
 -- ************************************************************************************************  
   
-        EXEC dbo.fcSPFranchiseStore_InsertTadarokat_toPAP @FranchiseStoreSN =          84157.474    ;  --         84157.474  
+        EXEC dbo.fcSPFranchiseStore_InsertTadarokat_toPAP @FranchiseStoreSN =   85670.474    --        ;  --           85670.474  
 
 
-	
+
+		--SELECT * FROM store WHERE SName  LIKE  N'%فاضل نراق%' 
+
 
 
 --11- sp_helptext dbo.fcSPFranchiseStore_InsertTadarokat_toPAP
                         
 --**************************************************************************************************  
   
-        EXEC dbo.fcSPFranchiseStore_InsertDiscountstore_toPAP @FranchiseStoreSN =         84157.474 ;
+        EXEC dbo.fcSPFranchiseStore_InsertDiscountstore_toPAP @FranchiseStoreSN =    85670.474 ;
 
 
 
@@ -92,7 +123,7 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
                        
 --***************************************************************************************************
   
-        EXEC dbo.fcSPFranchiseStore_InsertVatStore_toPAP @FranchiseStoreSN =         84157.474;  
+        EXEC dbo.fcSPFranchiseStore_InsertVatStore_toPAP @FranchiseStoreSN =   85670.474;  
 
 
 
@@ -101,7 +132,7 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
                         
 --***************************************************************************************************
 
-        EXEC dbo.fcSPFranchiseStore_InsertCash_toPAP @FranchiseStoreSN =         84157.474 ;  
+        EXEC dbo.fcSPFranchiseStore_InsertCash_toPAP @FranchiseStoreSN =           85670.474 ;  
 
 
 
@@ -110,7 +141,7 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
                         
 --***************************************************************************************************  
   
-        EXEC dbo.fcSPFranchiseStore_InsertPosDevice_toPAP @FranchiseStoreSN =      84157.474 ; 
+  EXEC dbo.fcSPFranchiseStore_InsertPosDevice_toPAP @FranchiseStoreSN =        85670.474 ; 
 
 
 
@@ -120,7 +151,7 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
 --15-sp_helptext fcSPFranchiseStore_InsertPosDevice_toPAP
            
 --***************************************************************************************************  
-	SELECT * FROM OKPlan..fcFranchiseTransactionLog WHERE FranchiseStoreSN  =      84157.474  
+SELECT * FROM OKPlan..fcFranchiseTransactionLog WHERE FranchiseStoreSN  =   85670.474   AND ErrorDS IS NULL
 
 
 
@@ -129,7 +160,7 @@ WHERE OPERATINGUNITNUMBER LIKE N'%OKR10690%'
 
                      ***************** END -- send name for Business*****************
 SELECT Sname FROM KOUROSHSTOREDB.POS.dbo.Store
-WHERE StoreId ='9208.199' 
+WHERE StoreId ='9579.199' 
 
 
 
@@ -148,4 +179,8 @@ ORDER BY mdCostCenterAXValue DESC
 
 
 
+		EXEC fcSPFranchiseStore_InsertSectionId_toPAP @FranchiseStoreSN =     85670.474         ,
+		@FranchiseContractSN = 117857.474, @mdRegionsubSN = 103
 
+
+		--SELECT * FROM ttadarokat WHERE  sharh LIKE  N'%لار دانش%' 
